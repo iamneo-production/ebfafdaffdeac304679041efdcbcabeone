@@ -27,5 +27,23 @@ function checkWin(){
     return null;
 }
 function updateResult(){
-    const winner=checkWin()
+    const winner=checkWin();
+    if (winner){
+        if(winner==='draw'){
+            resultContainer.textContent="It's a draw!";
+        }
+        else{
+            resultContainer.textContent='Player ${winner} wins!';
+        }
+        gameOver=true;
+        resetButton.ariaDisabled=false;
+    }
+    else{
+        resultContainer.textContent='Player ${currentPlayer} turn';
+    }
+}
+function makeMove(Cell,index){
+    if(!gameBoard[index] && !gameOver){
+        Cell.value=
+    }
 }
