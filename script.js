@@ -17,6 +17,13 @@ function checkWin(){
     ];
     for (const pattern of winPatters){
         const [a,b,c]=pattern;
-        
+        if (gameBoard[a] && gameBoard[a]=== gameBoard[b] && gameBoard[a]=== gameBoard[c]){
+            return gameBoard[a];
+        }
     }
+    if (!gameBoard.includes('')){
+        return 'draw';
+    }
+    return null;
+}
 }
