@@ -26,4 +26,6 @@ function checkWin(){
     }
     return null;
 }
+function updateResult(){
+    const winner=checkWin()
 }
