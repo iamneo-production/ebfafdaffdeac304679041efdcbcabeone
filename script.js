@@ -59,5 +59,11 @@ function resetGame(){
     });
     currentPlayer='X';
     gameOver=false;
-    resetButton.disabled
+    resetButton.disabled=true;
+    resultContainer.textContent="Player X's turn";
 }
+cells.forEach((cell,index)=>{
+    cell.addEventListener('click',()=>makeMove(cell,index));
+});
+resetButton.addEventListener('click',resetGame);
+resetGame();
