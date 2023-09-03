@@ -44,6 +44,20 @@ function updateResult(){
 }
 function makeMove(Cell,index){
     if(!gameBoard[index] && !gameOver){
-        Cell.value=
+        Cell.value=currentPlayer;
+        gameBoard[index]=currentPlayer;
+        currentPlayer= currentPlayer==='X'?'O':'X';
+        cell.disabled=true;
+        updateResult();
     }
+}
+function resetGame(){
+    cells.forEach((cell,index)=>{
+        cell.value='';
+        cells.disabled=false;
+        gameBoard[index]='';
+    });
+    currentPlayer='X';
+    gameOver=false;
+    resetButton.disabled
 }
